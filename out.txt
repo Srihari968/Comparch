@@ -1,18 +1,18 @@
-9
+1
 
 Main Memory Contents:
 
-0		: 40
-1		: 20
-2		: 50
-3		: 60
-4		: 80
-5		: 30
-6		: 10
-7		: 70
-8		: 8
-9		: 281423872
-10		: 285753344
+0		: 11
+1		: -1341784064
+2		: 952500226
+3		: -935460860
+4		: 311730176
+5		: 177471489
+6		: -402653184
+7		: 311730176
+8		: 445906945
+9		: -402653184
+10		: 0
 
 
 Cycle: 0------------------------------------------------
@@ -20,283 +20,443 @@ RW------------null
 MA------------null
 EX------------null
 OF------------null
-IF------------8
-CPC:9
+IF------------0
+CPC:1
 Cycle: 1------------------------------------------------
 RW------------null
 MA------------null
 EX------------null
-OF------------sub
+OF------------load
 PREVINS null
 OP1 null
-OP2 sub
-SRC1 3
-SRC2 3
+OP2 load
+SRC1 0
+SRC2 -1
 DEST -1
 OP1 null
-OP2 sub
-SRC1 3
-SRC2 3
+OP2 load
+SRC1 0
+SRC2 -1
 DEST -1
 OP1 null
-OP2 sub
-SRC1 3
-SRC2 3
+OP2 load
+SRC1 0
+SRC2 -1
 DEST -1
-IF------------9
-CPC:10
+IF------------1
+CPC:2
 Cycle: 2------------------------------------------------
 RW------------null
 MA------------null
-EX------------sub
-OF------------sub
-PREVINS sub
-OP1 sub
-OP2 sub
-SRC1 4
-SRC2 4
-DEST 3
-OP1 null
-OP2 sub
-SRC1 4
-SRC2 4
-DEST -1
-OP1 null
-OP2 sub
-SRC1 4
-SRC2 4
-DEST -1
-IF------------10
-CPC:11
-Cycle: 3------------------------------------------------
-RW------------null
-MA------------sub
-EX------------sub
-OF------------load
-PREVINS sub
-OP1 sub
-OP2 load
-SRC1 0
-SRC2 -1
-DEST 4
-OP1 sub
-OP2 load
-SRC1 0
-SRC2 -1
-DEST 3
-OP1 null
-OP2 load
-SRC1 0
-SRC2 -1
-DEST -1
-IF------------11
-CPC:12
-Cycle: 4------------------------------------------------
-RW------------sub
-Setting 0 in 3
-MA------------sub
 EX------------load
-OF------------blt
+OF------------divi
 PREVINS load
 OP1 load
-OP2 blt
+OP2 divi
 SRC1 3
-SRC2 8
-DEST 8
-COLLISSION DETECTED 1
-OP1 sub
-OP2 blt
-SRC1 3
-SRC2 8
-DEST 4
-OP1 sub
-OP2 blt
-SRC1 3
-SRC2 8
+SRC2 -1
 DEST 3
-COLLISSION DETECTED 3
-IF------------12
-Cycle: 5------------------------------------------------
-RW------------sub
-Setting 0 in 4
+COLLISSION DETECTED 1
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST -1
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST -1
+IF------------2
+Cycle: 3------------------------------------------------
+RW------------null
 MA------------load
 EX------------null
-OF------------blt
+OF------------divi
 PREVINS null
 OP1 null
-OP2 blt
+OP2 divi
 SRC1 3
-SRC2 8
-DEST 8
-OP1 load
-OP2 blt
-SRC1 3
-SRC2 8
-DEST 8
-COLLISSION DETECTED 2
-OP1 sub
-OP2 blt
-SRC1 3
-SRC2 8
-DEST 4
-IF------------12
-Cycle: 6------------------------------------------------
-RW------------load
-Setting 8 in 8
-MA------------null
-EX------------null
-OF------------blt
-PREVINS null
-OP1 null
-OP2 blt
-SRC1 3
-SRC2 8
-DEST 8
-OP1 null
-OP2 blt
-SRC1 3
-SRC2 8
-DEST -1
-OP1 load
-OP2 blt
-SRC1 3
-SRC2 8
-DEST 8
-COLLISSION DETECTED 3
-IF------------12
-Cycle: 7------------------------------------------------
-RW------------null
-MA------------null
-EX------------null
-OF------------blt
-PREVINS null
-OP1 null
-OP2 blt
-SRC1 3
-SRC2 8
-DEST 8
-OP1 null
-OP2 blt
-SRC1 3
-SRC2 8
-DEST -1
-OP1 null
-OP2 blt
-SRC1 3
-SRC2 8
-DEST -1
-IF------------12
-CPC:13
-Cycle: 8------------------------------------------------
-RW------------null
-MA------------null
-EX------------blt
-OF------------end
-PREVINS blt
-OP1 blt
-OP2 end
-SRC1 -1
-SRC2 -1
-DEST -1
-OP1 null
-OP2 end
-SRC1 -1
-SRC2 -1
-DEST -1
-OP1 null
-OP2 end
-SRC1 -1
-SRC2 -1
-DEST -1
-IF------------13
-got a branch   3
-CPC:16
-Cycle: 9------------------------------------------------
-RW------------null
-MA------------blt
-EX------------end
-OF------------blt
-PREVINS end
-OP1 end
-OP2 blt
-SRC1 4
-SRC2 8
-DEST -1
-OP1 blt
-OP2 blt
-SRC1 4
-SRC2 8
-DEST -1
-OP1 null
-OP2 blt
-SRC1 4
-SRC2 8
-DEST -1
-IF------------16
-CPC:17
-Cycle: 10------------------------------------------------
-RW------------blt
-MA------------end
-EX------------blt
-OF------------addi
-PREVINS blt
-OP1 blt
-OP2 addi
-SRC1 3
-SRC2 -1
-DEST -1
-OP1 end
-OP2 addi
-SRC1 3
-SRC2 -1
-DEST -1
-OP1 blt
-OP2 addi
-SRC1 3
-SRC2 -1
-DEST -1
-IF------------17
-got a branch   3
-CPC:20
-Cycle: 11------------------------------------------------
-RW------------end
-MA------------blt
-EX------------addi
-OF------------load
-PREVINS addi
-OP1 addi
-OP2 load
-SRC1 4
 SRC2 -1
 DEST 3
-OP1 blt
-OP2 load
-SRC1 4
+OP1 load
+OP2 divi
+SRC1 3
 SRC2 -1
+DEST 3
+COLLISSION DETECTED 2
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST -1
+IF------------2
+Cycle: 4------------------------------------------------
+RW------------load
+Setting 11 in 3
+MA------------null
+EX------------null
+OF------------divi
+PREVINS null
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST 3
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST -1
+OP1 load
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST 3
+COLLISSION DETECTED 3
+IF------------2
+Cycle: 5------------------------------------------------
+RW------------null
+MA------------null
+EX------------null
+OF------------divi
+PREVINS null
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST 3
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST -1
+OP1 null
+OP2 divi
+SRC1 3
+SRC2 -1
+DEST -1
+IF------------2
+CPC:3
+Cycle: 6------------------------------------------------
+RW------------null
+MA------------null
+EX------------divi
+Setting 1 in 31
+OF------------beq
+PREVINS divi
+OP1 divi
+OP2 beq
+SRC1 0
+SRC2 31
+DEST 3
+COLLISSION DETECTED 1
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST -1
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST -1
+IF------------3
+Cycle: 7------------------------------------------------
+RW------------null
+MA------------divi
+EX------------null
+OF------------beq
+PREVINS null
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST 3
+OP1 divi
+OP2 beq
+SRC1 0
+SRC2 31
+DEST 3
+COLLISSION DETECTED 2
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST -1
+IF------------3
+Cycle: 8------------------------------------------------
+RW------------divi
+Setting 5 in 3
+MA------------null
+EX------------null
+OF------------beq
+PREVINS null
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST 3
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST -1
+OP1 divi
+OP2 beq
+SRC1 0
+SRC2 31
+DEST 3
+COLLISSION DETECTED 3
+IF------------3
+Cycle: 9------------------------------------------------
+RW------------null
+MA------------null
+EX------------null
+OF------------beq
+PREVINS null
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST 3
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST -1
+OP1 null
+OP2 beq
+SRC1 0
+SRC2 31
+DEST -1
+IF------------3
+CPC:4
+Cycle: 10------------------------------------------------
+RW------------null
+MA------------null
+EX------------beq
+OF------------sub
+PREVINS beq
+OP1 beq
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+OP1 null
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+OP1 null
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+IF------------4
+CPC:5
+Cycle: 11------------------------------------------------
+RW------------null
+MA------------beq
+EX------------sub
+OF------------addi
+PREVINS sub
+OP1 sub
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST 10
+COLLISSION DETECTED 1
+OP1 beq
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST -1
+OP1 null
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST -1
+IF------------5
+Cycle: 12------------------------------------------------
+RW------------beq
+MA------------sub
+EX------------null
+OF------------addi
+PREVINS null
+OP1 null
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST 10
+OP1 sub
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST 10
+COLLISSION DETECTED 2
+OP1 beq
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST -1
+IF------------5
+Cycle: 13------------------------------------------------
+RW------------sub
+Setting 0 in 10
+MA------------null
+EX------------null
+OF------------addi
+PREVINS null
+OP1 null
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST 10
+OP1 null
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST -1
+OP1 sub
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST 10
+COLLISSION DETECTED 3
+IF------------5
+Cycle: 14------------------------------------------------
+RW------------null
+MA------------null
+EX------------null
+OF------------addi
+PREVINS null
+OP1 null
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST 10
+OP1 null
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST -1
+OP1 null
+OP2 addi
+SRC1 10
+SRC2 -1
+DEST -1
+IF------------5
+CPC:6
+Cycle: 15------------------------------------------------
+RW------------null
+MA------------null
+EX------------addi
+OF------------end
+PREVINS addi
+OP1 addi
+OP2 end
+SRC1 -1
+SRC2 -1
+DEST 10
+OP1 null
+OP2 end
+SRC1 -1
+SRC2 -1
+DEST -1
+OP1 null
+OP2 end
+SRC1 -1
+SRC2 -1
+DEST -1
+IF------------6
+CPC:7
+Cycle: 16------------------------------------------------
+RW------------null
+MA------------addi
+EX------------end
+OF------------sub
+PREVINS end
+OP1 end
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+OP1 addi
+OP2 sub
+SRC1 10
+SRC2 10
+DEST 10
+COLLISSION DETECTED 2
+OP1 null
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+IF------------7
+Cycle: 17------------------------------------------------
+RW------------addi
+Setting 1 in 10
+MA------------end
+EX------------null
+OF------------sub
+PREVINS null
+OP1 null
+OP2 sub
+SRC1 10
+SRC2 10
 DEST -1
 OP1 end
-OP2 load
-SRC1 4
-SRC2 -1
+OP2 sub
+SRC1 10
+SRC2 10
 DEST -1
-IF------------20
-CPC:21
+OP1 addi
+OP2 sub
+SRC1 10
+SRC2 10
+DEST 10
+COLLISSION DETECTED 3
+IF------------7
+Cycle: 18------------------------------------------------
+RW------------end
+MA------------null
+EX------------null
+OF------------sub
+PREVINS null
+OP1 null
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+OP1 null
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+OP1 end
+OP2 sub
+SRC1 10
+SRC2 10
+DEST -1
+IF------------7
+CPC:8
 
 Register File Contents:
 
-PC	: 22
+PC	: 9
 
 x0	: 0
 x1	: 65535
 x2	: 65535
-x3	: 0
+x3	: 5
 x4	: 0
 x5	: 0
 x6	: 0
 x7	: 0
-x8	: 8
+x8	: 0
 x9	: 0
-x10	: 0
+x10	: 1
 x11	: 0
 x12	: 0
 x13	: 0
@@ -317,43 +477,43 @@ x27	: 0
 x28	: 0
 x29	: 0
 x30	: 0
-x31	: 0
+x31	: 1
 
 
 
 Main Memory Contents:
 
-0		: 40
-1		: 20
-2		: 50
-3		: 60
-4		: 80
-5		: 30
-6		: 10
-7		: 70
-8		: 8
-9		: 281423872
-10		: 285753344
-11		: -1341128696
-12		: -657457149
-13		: -402653184
-14		: 147324929
-15		: 147324929
-16		: -653262845
-17		: 147193857
-18		: -1069547526
-19		: -1328939008
-20		: -1324613632
-21		: -649330685
-22		: 151519233
-23		: -1069547527
-24		: 298741760
-25		: 684032
-26		: -1182400512
-27		: -1178075136
-28		: 151519233
-29		: -1069547533
+0		: 11
+1		: -1341784064
+2		: 952500226
+3		: -935460860
+4		: 311730176
+5		: 177471489
+6		: -402653184
+7		: 311730176
+8		: 445906945
+9		: -402653184
+10		: 0
+11		: 0
+12		: 0
+13		: 0
+14		: 0
+15		: 0
+16		: 0
+17		: 0
+18		: 0
+19		: 0
+20		: 0
+21		: 0
+22		: 0
+23		: 0
+24		: 0
+25		: 0
+26		: 0
+27		: 0
+28		: 0
+29		: 0
 30		: 0
 
 
-Hash of the Processor State = -1205514085
+Hash of the Processor State = -367984412

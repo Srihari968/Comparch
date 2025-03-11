@@ -1,5 +1,6 @@
 package processor.pipeline;
 
+import generic.Simulator;
 import processor.Clock;
 import processor.Processor;
 
@@ -284,7 +285,20 @@ public class Execute {
 				//System.out.println("OP IS JMP");
 				imm = OF_EX_Latch.imm;
 				EX_IF_Latch.isbranch = true;
-				EX_IF_Latch.inc = imm;
+				EX_IF_Latch.inc = imm - 1;
+				containingProcessor.getIF_EnableLatch().setIF_enable(false);
+				containingProcessor.getIFUnit().IF_OF_Latch.setOF_enable(false);
+				containingProcessor.getOFUnit().ins = null;
+				containingProcessor.getOFUnit().instruction = 0;
+
+				containingProcessor.getOFUnit().ins = null;
+				containingProcessor.getOFUnit().instruction = 0;
+				containingProcessor.getIF_EnableLatch().setIF_enable(false);
+				containingProcessor.getIFUnit().IF_OF_Latch.setOF_enable(false);
+				OF_EX_Latch.ins = null;
+				OF_EX_Latch.rn1 = -1;
+				OF_EX_Latch.rn2 = -1;
+				OF_EX_Latch.rn3 = -1;
 				return;
 				
 			case "beq":
@@ -295,11 +309,19 @@ public class Execute {
 				if(rs1 == rs2)
 				{
 					EX_IF_Latch.isbranch = true;
-					EX_IF_Latch.inc = imm;
+					EX_IF_Latch.inc = imm - 1;
 					containingProcessor.getIF_EnableLatch().setIF_enable(false);
 					containingProcessor.getIFUnit().IF_OF_Latch.setOF_enable(false);
 					containingProcessor.getOFUnit().ins = null;
 					containingProcessor.getOFUnit().instruction = 0;
+					containingProcessor.getOFUnit().ins = null;
+					containingProcessor.getOFUnit().instruction = 0;
+					containingProcessor.getIF_EnableLatch().setIF_enable(false);
+					containingProcessor.getIFUnit().IF_OF_Latch.setOF_enable(false);
+					OF_EX_Latch.ins = null;
+					OF_EX_Latch.rn1 = -1;
+					OF_EX_Latch.rn2 = -1;
+					OF_EX_Latch.rn3 = -1;
 					//containingProcessor.IF
 					return;
 				
@@ -309,13 +331,21 @@ public class Execute {
 				//System.out.println("OP IS BNE");
 				rs1 = OF_EX_Latch.r1;
 				rs2 = OF_EX_Latch.r2;
-				imm = OF_EX_Latch.imm;
+				imm = OF_EX_Latch.imm - 1;
 				if(rs1 != rs2)
 				{
 					EX_IF_Latch.isbranch = true;
 					EX_IF_Latch.inc = imm;
 					containingProcessor.getOFUnit().ins = null;
 					containingProcessor.getOFUnit().instruction = 0;
+					containingProcessor.getOFUnit().ins = null;
+					containingProcessor.getOFUnit().instruction = 0;
+					containingProcessor.getIF_EnableLatch().setIF_enable(false);
+					containingProcessor.getIFUnit().IF_OF_Latch.setOF_enable(false);
+					OF_EX_Latch.ins = null;
+					OF_EX_Latch.rn1 = -1;
+					OF_EX_Latch.rn2 = -1;
+					OF_EX_Latch.rn3 = -1;
 					return;
 					
 				}
@@ -324,13 +354,19 @@ public class Execute {
 				//System.out.println("OP IS BLT");
 				rs1 = OF_EX_Latch.r1;
 				rs2 = OF_EX_Latch.r2;
-				imm = OF_EX_Latch.imm;
+				imm = OF_EX_Latch.imm - 1;
 				if(rs1 <  rs2)
 				{
 					EX_IF_Latch.isbranch = true;
 					EX_IF_Latch.inc = imm;
 					containingProcessor.getOFUnit().ins = null;
 					containingProcessor.getOFUnit().instruction = 0;
+					containingProcessor.getIF_EnableLatch().setIF_enable(false);
+					containingProcessor.getIFUnit().IF_OF_Latch.setOF_enable(false);
+					OF_EX_Latch.ins = null;
+					OF_EX_Latch.rn1 = -1;
+					OF_EX_Latch.rn2 = -1;
+					OF_EX_Latch.rn3 = -1;
 					return;
 					
 				}
@@ -339,13 +375,21 @@ public class Execute {
 				//System.out.println("OP IS BGT");
 				rs1 = OF_EX_Latch.r1;
 				rs2 = OF_EX_Latch.r2;
-				imm = OF_EX_Latch.imm;
+				imm = OF_EX_Latch.imm  - 1;
 				if(rs1 > rs2)
 				{
 					EX_IF_Latch.isbranch = true;
 					EX_IF_Latch.inc = imm;
 					containingProcessor.getOFUnit().ins = null;
 					containingProcessor.getOFUnit().instruction = 0;
+					containingProcessor.getOFUnit().ins = null;
+					containingProcessor.getOFUnit().instruction = 0;
+					containingProcessor.getIF_EnableLatch().setIF_enable(false);
+					containingProcessor.getIFUnit().IF_OF_Latch.setOF_enable(false);
+					OF_EX_Latch.ins = null;
+					OF_EX_Latch.rn1 = -1;
+					OF_EX_Latch.rn2 = -1;
+					OF_EX_Latch.rn3 = -1;
 					return;		
 				}
 				break;
@@ -373,6 +417,8 @@ public class Execute {
 				break;
 			case "end":
 				//System.out.println("OP IS END");
+				//Simulator.setSimulationComplete(true);
+				containingProcessor.getIF_EnableLatch().setIF_enable(false);
 				break;
 			default:
 				//System.out.println("Unknown Operation");
