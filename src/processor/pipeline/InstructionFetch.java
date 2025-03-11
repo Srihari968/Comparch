@@ -1,5 +1,7 @@
 package processor.pipeline;
 
+import java.io.IOError;
+
 import processor.Processor;
 
 public class InstructionFetch {
@@ -19,6 +21,7 @@ public class InstructionFetch {
 	
 	public void performIF()
 	{
+		System.out.println("IF------------" + containingProcessor.getRegisterFile().getProgramCounter());
 		if(IF_EnableLatch.isIF_enable())
 
 		{
@@ -39,8 +42,12 @@ public class InstructionFetch {
 			IF_OF_Latch.setInstruction(newInstruction);
 			
 			
-			IF_EnableLatch.setIF_enable(false);
+			//IF_EnableLatch.setIF_enable(false);
 			IF_OF_Latch.setOF_enable(true);
+		}
+		else{
+			//IF_OF_Latch.setInstruction(0);
+			
 		}
 	}
 

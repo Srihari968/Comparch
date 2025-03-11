@@ -7,6 +7,10 @@ public class RegisterWrite {
 	Processor containingProcessor;
 	MA_RW_LatchType MA_RW_Latch;
 	IF_EnableLatchType IF_EnableLatch;
+	String opt;
+	int rn1 = -1;
+	int rn2 = -1;
+	int rn3 = -1;
 	
 	public RegisterWrite(Processor containingProcessor, MA_RW_LatchType mA_RW_Latch, IF_EnableLatchType iF_EnableLatch)
 	{
@@ -17,6 +21,13 @@ public class RegisterWrite {
 	
 	public void performRW()
 	{
+		opt = MA_RW_Latch.ins;
+		rn1 = MA_RW_Latch.rn1;
+		rn2 = MA_RW_Latch.rn2;
+		rn3 = MA_RW_Latch.rn3;
+		System.out.println("RW------------" + MA_RW_Latch.ins);
+		if(MA_RW_Latch.ins == null)
+			return;
 		if(MA_RW_Latch.isRW_enable())
 		{
 			//TODO
@@ -39,7 +50,7 @@ public class RegisterWrite {
 			// if instruction being processed is an end instruction, remember to call Simulator.setSimulationComplete(true);
 			
 			
-			MA_RW_Latch.setRW_enable(false);
+			//MA_RW_Latch.setRW_enable(false);
 			IF_EnableLatch.setIF_enable(true);
 		}
 	}

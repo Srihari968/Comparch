@@ -12,6 +12,10 @@ public class OF_EX_LatchType {
 	int r2;
 	int r3;
 
+	int rn1 = -1;
+	int rn2 = -1;
+	int rn3 = -1;
+
 	
 	public OF_EX_LatchType()
 	{

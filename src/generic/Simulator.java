@@ -73,15 +73,21 @@ public class Simulator {
 		int mi = 100000, ic = 0;
 		while(simulationComplete == false)
 		{
-			processor.getIFUnit().performIF();
-			Clock.incrementClock();
-			processor.getOFUnit().performOF();
-			Clock.incrementClock();
-			processor.getEXUnit().performEX();
-			Clock.incrementClock();
-			processor.getMAUnit().performMA();
-			Clock.incrementClock();
+			System.out.println("Cycle: " +ic + "------------------------------------------------");
 			processor.getRWUnit().performRW();
+			processor.getMAUnit().performMA();
+			processor.getEXUnit().performEX();
+			processor.getOFUnit().performOF();
+			processor.getIFUnit().performIF();
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			Clock.incrementClock();
 			ic++;
 			if(ic == mi)

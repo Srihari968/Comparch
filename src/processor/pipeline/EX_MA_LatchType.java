@@ -7,6 +7,10 @@ public class EX_MA_LatchType {
 	int val;
 	int rd, rs;
 	int memAdd;
+
+	int rn1 = -1;
+	int rn2 = -1;
+	int rn3 = -1;
 	
 	public EX_MA_LatchType()
 	{
