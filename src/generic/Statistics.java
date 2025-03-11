@@ -19,7 +19,7 @@ public class Statistics {
 			
 			//writer.println("Number of instructions executed = " + numberOfInstructions);
 			writer.println("Number of cycles taken = " + numberOfCycles);
-			writer.println("Number of data hazards = " + numberOfDataHazards);
+			writer.println("Number of OF Stalls = " + numberOfDataHazards);
 			writer.println("Number of branches = " + numberOfBranches);
 			writer.println("Number of wrong branch instructions entering pipeline = " + numberOfBranches*2);
 			
