@@ -4,6 +4,7 @@ import java.text.NumberFormat.Style;
 import java.util.HashMap;
 import java.util.Map;
 
+import generic.Simulator;
 import processor.Processor;
 
 public class OperandFetch {
@@ -193,6 +194,7 @@ public class OperandFetch {
 			{
 				IF_enableLatch.setIF_enable(false);
 				OF_EX_Latch.ins =null;
+				Simulator.dh++;
 				return;
 			}
 			else

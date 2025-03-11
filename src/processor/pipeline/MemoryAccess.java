@@ -30,8 +30,12 @@ public class MemoryAccess {
 		MA_RW_Latch.rn1 = EX_MA_Latch.rn1;
 		MA_RW_Latch.rn2 = EX_MA_Latch.rn2;
 		MA_RW_Latch.rn3 = EX_MA_Latch.rn3;
+		MA_RW_Latch.ins = EX_MA_Latch.ins;
+
 
 		System.out.println("MA------------" + EX_MA_Latch.ins);
+		if(opt == null)
+			return;
 
 		MA_RW_Latch.rd = EX_MA_Latch.rd;
 		int rd = MA_RW_Latch.rd;
@@ -39,7 +43,7 @@ public class MemoryAccess {
 		MA_RW_Latch.val = EX_MA_Latch.val;
 		RegisterFile regs = containingProcessor.getRegisterFile();
 		MainMemory mem = containingProcessor.getMainMemory();
-		MA_RW_Latch.ins = EX_MA_Latch.ins;
+		
 	
 		if(EX_MA_Latch.ins == "load")
 		{

@@ -11,6 +11,10 @@ public class Simulator {
 		
 	static Processor processor;
 	static boolean simulationComplete;
+	public static boolean endFound = false;
+	public static int dh = 0;
+	public static int bf = 0;
+
 	
 	public static void setupSimulation(String assemblyProgramFile, Processor p)
 	{
@@ -70,6 +74,7 @@ public class Simulator {
 	
 	public static void simulate()
 	{
+		Statistics sta = new Statistics();
 		int mi = 100000, ic = 0;
 		while(simulationComplete == false)
 		{
@@ -77,8 +82,13 @@ public class Simulator {
 			processor.getRWUnit().performRW();
 			processor.getMAUnit().performMA();
 			processor.getEXUnit().performEX();
-			processor.getOFUnit().performOF();
+			if(!endFound)
+			{
+				processor.getOFUnit().performOF();
 			processor.getIFUnit().performIF();
+			}
+			// processor.getOFUnit().performOF();
+			// processor.getIFUnit().performIF();
 			
 			
 			
@@ -98,10 +108,12 @@ public class Simulator {
 		
 		// TODO
 		// set statistics
-		processor.getRegisterFile().setProgramCounter(processor.getRegisterFile().getProgramCounter()+1);
-		Statistics sta = new Statistics();
+		processor.getRegisterFile().setProgramCounter(processor.getRegisterFile().getProgramCounter());
+		
 		sta.setNumberOfInstructions(ic);
-		sta.setNumberOfCycles(ic);
+		sta.setNumberOfCycles((int)Clock.getCurrentTime());
+		sta.branch(bf);
+		sta.dataHazrd(dh);
 	}
 	
 	public static void setSimulationComplete(boolean value)

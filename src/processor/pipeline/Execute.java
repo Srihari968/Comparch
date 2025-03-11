@@ -299,6 +299,7 @@ public class Execute {
 				OF_EX_Latch.rn1 = -1;
 				OF_EX_Latch.rn2 = -1;
 				OF_EX_Latch.rn3 = -1;
+				Simulator.bf++;
 				return;
 				
 			case "beq":
@@ -322,6 +323,7 @@ public class Execute {
 					OF_EX_Latch.rn1 = -1;
 					OF_EX_Latch.rn2 = -1;
 					OF_EX_Latch.rn3 = -1;
+					Simulator.bf++;
 					//containingProcessor.IF
 					return;
 				
@@ -346,6 +348,7 @@ public class Execute {
 					OF_EX_Latch.rn1 = -1;
 					OF_EX_Latch.rn2 = -1;
 					OF_EX_Latch.rn3 = -1;
+					Simulator.bf++;
 					return;
 					
 				}
@@ -367,6 +370,7 @@ public class Execute {
 					OF_EX_Latch.rn1 = -1;
 					OF_EX_Latch.rn2 = -1;
 					OF_EX_Latch.rn3 = -1;
+					Simulator.bf++;
 					return;
 					
 				}
@@ -390,6 +394,7 @@ public class Execute {
 					OF_EX_Latch.rn1 = -1;
 					OF_EX_Latch.rn2 = -1;
 					OF_EX_Latch.rn3 = -1;
+					Simulator.bf++;
 					return;		
 				}
 				break;
@@ -419,6 +424,7 @@ public class Execute {
 				//System.out.println("OP IS END");
 				//Simulator.setSimulationComplete(true);
 				containingProcessor.getIF_EnableLatch().setIF_enable(false);
+				Simulator.endFound = true;
 				break;
 			default:
 				//System.out.println("Unknown Operation");
